@@ -548,7 +548,8 @@ body {
 
 .about-info-card {
   width: 100%;
-  padding: 30px;
+  max-width: 420px;
+  padding: 24px;
 
   background: rgba(16, 31, 64, 0.75);
 
@@ -684,7 +685,7 @@ body {
 
 .skill-card {
   height: 100%;
-  padding: 28px;
+  padding: 23px;
 
   background: rgba(16, 31, 64, 0.75);
 
@@ -988,7 +989,8 @@ body {
 /* TIMELINE */
 
 .education-timeline {
-  max-width: 800px;
+  width: 100%;
+  max-width: 680px;
   margin: 0 auto;
   position: relative;
   padding-left: 35px;
@@ -1011,9 +1013,9 @@ body {
 .education-card {
   position: relative;
   display: flex;
-  gap: 22px;
-  margin-bottom: 30px;
-  padding: 25px;
+  gap: 16px;
+  margin-bottom: 22px;
+  padding: 20px;
   background: rgba(17, 29, 60, 0.75);
   border: 1px solid rgba(34, 211, 238, 0.2);
   border-radius: 15px;
@@ -1516,7 +1518,7 @@ body {
 
 .testimonial-card {
   height: 100%;
-  padding: 30px 25px;
+  padding: 25px 21px;
 
   background: rgba(16, 31, 64, 0.75);
 
@@ -1616,5 +1618,104 @@ body {
 
   .testimonial-card {
     padding: 25px 20px;
+  }
+}
+
+/* ==========================
+   FINAL LAYOUT FIXES
+========================== */
+
+/* Keep Bootstrap container widths and gutters working correctly. */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Avoid fixed side margins that can make sections/cards overflow. */
+.home-section,
+.about-section,
+.contact-section {
+  width: 100%;
+  margin-left: 0;
+}
+
+.contact-form {
+  margin-right: 0;
+}
+
+/* Keep About Me card compact and centered. */
+.about-info-container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.about-info-card {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+/* Keep Education cards narrower and centered. */
+.education-timeline {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* Prevent cards from exceeding their available column width. */
+.skill-card,
+.project-card,
+.testimonial-card,
+.contact-form {
+  width: 100%;
+  min-width: 0;
+}
+
+@media (max-width: 991.98px) {
+  .home-section .row {
+    --bs-gutter-x: 1.5rem;
+  }
+
+  .about-info-card {
+    max-width: 500px;
+  }
+
+  .education-timeline {
+    max-width: 680px;
+  }
+}
+
+@media (max-width: 767px) {
+  .about-info-container {
+    padding: 20px 15px;
+  }
+
+  .about-info-card {
+    max-width: 100%;
+    padding: 18px;
+  }
+
+  .education-timeline {
+    max-width: 100%;
+    padding-left: 30px;
+  }
+
+  .education-card {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .skill-card {
+    padding: 20px;
+  }
+
+  .contact-form {
+    padding: 22px;
   }
 }
